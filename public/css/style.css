@@ -1,0 +1,19 @@
+.active {
+    background-color: #0D3153!important;
+    padding: 5px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.test {
+    background-color : #8998A1;
+}
+
+a{
+    color:black;
+}
+
+
+.nav-pills a{
+    font-weight: bold;
+    padding: 12px 0 12px 0;
+}
