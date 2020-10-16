@@ -2,6 +2,10 @@ body{
     background-image: url('../img/arrière-plan_site.png');
 }
 
+.navbar-brand img{
+    width: 80px;
+    border-radius: 100px;
+}
 
 .active {
     background-color: #0D3153!important;
