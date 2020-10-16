@@ -7,6 +7,10 @@ body{
     border-radius: 100px;
 }
 
+.nav-item{
+    margin-right: 30px;
+}
+
 .active {
     background-color: #0D3153!important;
     padding: 5px;
