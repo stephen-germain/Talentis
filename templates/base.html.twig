@@ -4,7 +4,11 @@
         <meta charset="UTF-8">
         <title>{% block title %}base{% endblock %}</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        {# <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script> #}
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <script src="{{ asset('js/app.js') }}"></script>
         {% block stylesheets %}{% endblock %}
     </head>
 
@@ -12,7 +16,7 @@
    
     <nav class="navbar navbar-expand-md navbar-light" id="mainNav">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ path('home') }}"><img src="{{ asset('img/Logo-Talentis.png') }}" alt="logo"></a>
+            <a id="home" class="navbar-brand" href="{{ path('home') }}"><img src="{{ asset('img/Logo-Talentis.png') }}" alt="logo"></a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
@@ -57,6 +61,12 @@
                     <a href="#" class="text-dark text-decoration-none">t@lentis - </a>
                     <a href="#" class="text-dark text-decoration-none"> Mentions légales -</a>
                     <a href="#" class="text-dark text-decoration-none"> CGU</a>
+                    
+                    <a href="#home">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-up-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
