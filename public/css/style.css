@@ -1,7 +1,22 @@
+/*************
+** GENERAlE **
+*************/
+
 body{
     background-image: url('../img/arrière-plan_site.png');
+    background-attachment: fixed;
 }
 
+h2{
+    margin: auto;
+}
+
+.colorBack{
+    background: #c7d0d8;
+}
+/*************
+** 1 NAVBAR **
+*************/
 .navbar-brand img{
     width: 80px;
     border-radius: 100px;
@@ -9,7 +24,26 @@ body{
 
 .nav-item{
     margin-right: 30px;
+    background-color: #8998A1;
+    border-radius: 15px;
+    transition: 0.5s;
 }
+
+.nav1{
+    color: #0000;
+}
+
+.nav-item:hover{
+    background-color: #0D3153;
+}
+
+.nav1:hover{
+    color: #FFFF!important;
+}
+
+/*************
+** 2 NAVBAR **
+*************/
 
 .active {
     background-color: #0D3153!important;
@@ -17,16 +51,80 @@ body{
     border-radius: 10px 10px 0px 0px;
 }
 
-.test {
+.menu {
     background-color : #8998A1;
 }
 
-a{
+.menu a{
     color:black;
 }
-
 
 .nav-pills a{
     font-weight: bold;
     padding: 12px 0 12px 0;
+}
+
+
+/*********
+** HOME **
+**********/
+
+.color{
+
+    background-color: #AAA7A5;
+    border-radius: 12px;
+}
+
+#home h5{
+    margin: auto;
+}
+
+.arrow img{
+    width: 60%;
+    padding-top: 100px;
+}
+
+/************
+** METIERS **
+************/
+
+.circle{
+    width: 10vw;
+    height: 14vw;
+    border-radius: 50%;
+    box-shadow: 4px 5px 0px 1px #8998a1;
+}
+
+/***************
+** PARTENAIRE **
+***************/
+
+#partenaire .colorBack{
+    border-radius : 25px;
+}
+
+#partenaire h2{
+    text-decoration: underline;
+}
+
+/************
+** Contact **
+************/
+
+#contact .colorContact{
+    background : #AAA7A5;
+    border-radius : 25px;
+}
+
+.form-group{
+    margin-bottom: 0;
+}
+
+.form-control{
+    border-radius: 0;
+}
+
+.form-group button{
+    background: #AAA7A5;
+    border: none;
 }
