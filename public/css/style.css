@@ -5,6 +5,7 @@
 body{
     background-image: url('../img/arrière-plan_site.png');
     background-attachment: fixed;
+    background-size: cover;
 }
 
 h2{

@@ -20,24 +20,98 @@
                 <h4>Inscription</h4>
 
                 {# {{ form_start(registrationForm) }} #}
-                    {{ form_row(registrationForm.nom) }}
-                    {{ form_row(registrationForm.prenom) }}
-                    {{ form_row(registrationForm.email) }}
-                    {{ form_row(registrationForm.societe) }}
-                    {{ form_row(registrationForm.fonction) }}
-                    {{ form_row(registrationForm.adresseSociete) }}
-                   
-                    {{ form_row(registrationForm.agreeTerms) }}
+                    
+                    {# <div class="form-group row">
+                        <label for="nom" class="col-sm-2 col-form-label">Nom</label>
+                        <div class="col-sm-10">
+                        <input type="text" class="form-control" id="nom" name="nom[nom]">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="prenom" class="col-sm-2 col-form-label">Prenom</label>
+                        <div class="col-sm-10">
+                        <input type="prenom" class="form-control" id="prenom" name="prenom[prenom]">
+                        </div>
+                    </div>
+                     <div class="form-group row">
+                        <label for="prenom" class="col-sm-2 col-form-label">Prenom</label>
+                        <div class="col-sm-10">
+                        <input type="prenom" class="form-control" id="prenom" name="prenom[prenom]">
+                        </div>
+                    </div> #}
+                    <div class="form-group row">
+                        <div class="col-2">
+                            {{ form_label(registrationForm.nom, 'Nom *') }}
+                        </div>
+                        
+                        <div class="col-md-10">
+                            {{ form_widget(registrationForm.nom) }}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-2">
+                            {{ form_label(registrationForm.prenom, 'Prenom *') }}
+                        </div>
+                        
+                        <div class="col-md-10">
+                            {{ form_widget(registrationForm.prenom) }}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-2">
+                            {{ form_label(registrationForm.email, 'Mail *') }}
+                        </div>
+                        
+                        <div class="col-md-10">
+                            {{ form_widget(registrationForm.email) }}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-2">
+                            {{ form_label(registrationForm.societe, 'Société *') }}
+                        </div>
+                        
+                        <div class="col-md-10">
+                            {{ form_widget(registrationForm.societe) }}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-2">
+                            {{ form_label(registrationForm.fonction) }}
+                        </div>
+                        
+                        <div class="col-md-10">
+                            {{ form_widget(registrationForm.fonction) }}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-2">
+                            {{ form_label(registrationForm.adresseSociete) }}
+                        </div>
+                        
+                        <div class="col-md-10">
+                            {{ form_widget(registrationForm.adresseSociete) }}
+                        </div>
+                    </div>
 
                     <button type="submit" class="btn">Valider</button>
                 {# {{ form_end(registrationForm) }} #}
             </div>
+
+
             <div class="col-5">
                 {# {{ form_start(registrationForm) }} #}
 
-                    {{ form_row(registrationForm.plainPassword, {
-                        label: 'Password'
-                    }) }}
+                <div class="form-group row">
+                        <div class="col-4">
+                            {{ form_label(registrationForm.plainPassword, 'Mot de passe *') }}
+                        </div>
+                        
+                        <div class="col-md-8">
+                            {{ form_widget(registrationForm.plainPassword) }}
+                        </div>
+                    </div>
+
                 {{ form_end(registrationForm) }}
 
             </div>
