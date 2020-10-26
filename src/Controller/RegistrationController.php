@@ -23,7 +23,29 @@ class RegistrationController extends AbstractController
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 
+        $img = $form['img']->getData();
+
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $nomImg = md5(uniqid());
+            $extensionImg = $img->guessExtension();
+            $newNomImg = $nomImg.'.'.$extensionImg;
+
+            try{
+                $img->move(
+                    $this->getParameter('img_projet'),
+                    $newNomImg
+                );
+            }
+            catch(FileException $e){
+                $this-addFlash(
+                    'danger',
+                    'Une erreur est survenue lors de l\'importation de l\'image'
+                );  
+            }
+
+            $user->setImg($newNomImg);
+            
             // encode the plain password
             $user->setPassword(
                 $passwordEncoder->encodePassword(
