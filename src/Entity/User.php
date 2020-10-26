@@ -66,6 +66,11 @@ class User implements UserInterface
      */
     private $img;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $abonnement;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -212,6 +217,18 @@ class User implements UserInterface
     public function setImg(?string $img): self
     {
         $this->img = $img;
+
+        return $this;
+    }
+
+    public function getAbonnement(): ?int
+    {
+        return $this->abonnement;
+    }
+
+    public function setAbonnement(int $abonnement): self
+    {
+        $this->abonnement = $abonnement;
 
         return $this;
     }
