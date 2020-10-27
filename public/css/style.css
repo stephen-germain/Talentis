@@ -138,3 +138,16 @@ h2{
     background: #AAA7A5;
     border-radius: 25px;
 }
+
+.listAbo{
+    border-right: 3px solid;
+}
+
+.titleAbo{
+    margin:0;
+}
+
+.validAbo{
+    margin: auto;
+    background-color: #0D3153;
+}

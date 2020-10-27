@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserSpaceController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            {{ app.user.img }}
+            {{ app.user.prenom}}
+        </div>
+    </div>
+{% endblock %}
