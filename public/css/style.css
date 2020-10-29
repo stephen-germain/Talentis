@@ -151,3 +151,11 @@ h2{
     margin: auto;
     background-color: #0D3153;
 }
+
+/***************
+** MON ESPACE **
+***************/
+
+.formSearch{
+    background-color: red;
+}

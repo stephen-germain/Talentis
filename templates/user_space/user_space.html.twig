@@ -4,17 +4,21 @@
 
 {% block body %}
     <div class="container">
-        <div class="row">
+        <div class="row formSearch">
             <div class="col-3">
                 {{ app.user.img }}
                 {{ app.user.prenom}}
             </div>
             <div class="col-6">
-                <select class="form-control form-control-sm">
+
+                {{ form_start(formulaire) }}
+                {{ form_end(formulaire ) }}
+
+                {# <select class="form-control form-control-sm">
                    {% for test in competence %}
                         <option>{{ test.competences }}</option>
                     {% endfor %}
-                </select> 
+                </select>  #}
             </div>
         </div>
     </div>

@@ -50,16 +50,22 @@ class Profil
     private $experience;
 
     /**
-     * @ORM\ManyToMany(targetEntity=TestCompetences::class, inversedBy="profils")
+     * @ORM\ManyToMany(targetEntity=HardSkills::class, inversedBy="profils")
      */
-    private $competence;
+    private $competences;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=SoftSkills::class, inversedBy="profils")
+     */
+    private $capacites;
 
     public function __construct()
     {
-        $this->competence = new ArrayCollection();
+        $this->competences = new ArrayCollection();
+        $this->capacites = new ArrayCollection();
     }
 
-
+   
     public function getId(): ?int
     {
         return $this->id;
@@ -138,26 +144,52 @@ class Profil
     }
 
     /**
-     * @return Collection|TestCompetences[]
+     * @return Collection|HardSkills[]
      */
-    public function getCompetence(): Collection
+    public function getCompetences(): Collection
     {
-        return $this->competence;
+        return $this->competences;
     }
 
-    public function addCompetence(TestCompetences $competence): self
+    public function addCompetence(HardSkills $competence): self
     {
-        if (!$this->competence->contains($competence)) {
-            $this->competence[] = $competence;
+        if (!$this->competences->contains($competence)) {
+            $this->competences[] = $competence;
         }
 
         return $this;
     }
 
-    public function removeCompetence(TestCompetences $competence): self
+    public function removeCompetence(HardSkills $competence): self
     {
-        if ($this->competence->contains($competence)) {
-            $this->competence->removeElement($competence);
+        if ($this->competences->contains($competence)) {
+            $this->competences->removeElement($competence);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|SoftSkills[]
+     */
+    public function getCapacites(): Collection
+    {
+        return $this->capacites;
+    }
+
+    public function addCapacite(SoftSkills $capacite): self
+    {
+        if (!$this->capacites->contains($capacite)) {
+            $this->capacites[] = $capacite;
+        }
+
+        return $this;
+    }
+
+    public function removeCapacite(SoftSkills $capacite): self
+    {
+        if ($this->capacites->contains($capacite)) {
+            $this->capacites->removeElement($capacite);
         }
 
         return $this;
