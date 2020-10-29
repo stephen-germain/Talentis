@@ -22,12 +22,6 @@ class HardSkills
      */
     private $competences;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Profil::class, inversedBy="hardSkills")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $profil;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -41,18 +35,6 @@ class HardSkills
     public function setCompetences(string $competences): self
     {
         $this->competences = $competences;
-
-        return $this;
-    }
-
-    public function getProfil(): ?Profil
-    {
-        return $this->profil;
-    }
-
-    public function setProfil(?Profil $profil): self
-    {
-        $this->profil = $profil;
 
         return $this;
     }

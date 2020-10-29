@@ -50,20 +50,15 @@ class Profil
     private $experience;
 
     /**
-     * @ORM\OneToMany(targetEntity=SoftSkills::class, mappedBy="profil")
+     * @ORM\ManyToMany(targetEntity=TestCompetences::class, inversedBy="profils")
      */
-    private $softSkills;
-
-    /**
-     * @ORM\OneToMany(targetEntity=HardSkills::class, mappedBy="profil")
-     */
-    private $hardSkills;
+    private $competence;
 
     public function __construct()
     {
-        $this->softSkills = new ArrayCollection();
-        $this->hardSkills = new ArrayCollection();
+        $this->competence = new ArrayCollection();
     }
+
 
     public function getId(): ?int
     {
@@ -143,62 +138,26 @@ class Profil
     }
 
     /**
-     * @return Collection|SoftSkills[]
+     * @return Collection|TestCompetences[]
      */
-    public function getSoftSkills(): Collection
+    public function getCompetence(): Collection
     {
-        return $this->softSkills;
+        return $this->competence;
     }
 
-    public function addSoftSkill(SoftSkills $softSkill): self
+    public function addCompetence(TestCompetences $competence): self
     {
-        if (!$this->softSkills->contains($softSkill)) {
-            $this->softSkills[] = $softSkill;
-            $softSkill->setProfil($this);
+        if (!$this->competence->contains($competence)) {
+            $this->competence[] = $competence;
         }
 
         return $this;
     }
 
-    public function removeSoftSkill(SoftSkills $softSkill): self
+    public function removeCompetence(TestCompetences $competence): self
     {
-        if ($this->softSkills->contains($softSkill)) {
-            $this->softSkills->removeElement($softSkill);
-            // set the owning side to null (unless already changed)
-            if ($softSkill->getProfil() === $this) {
-                $softSkill->setProfil(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|HardSkills[]
-     */
-    public function getHardSkills(): Collection
-    {
-        return $this->hardSkills;
-    }
-
-    public function addHardSkill(HardSkills $hardSkill): self
-    {
-        if (!$this->hardSkills->contains($hardSkill)) {
-            $this->hardSkills[] = $hardSkill;
-            $hardSkill->setProfil($this);
-        }
-
-        return $this;
-    }
-
-    public function removeHardSkill(HardSkills $hardSkill): self
-    {
-        if ($this->hardSkills->contains($hardSkill)) {
-            $this->hardSkills->removeElement($hardSkill);
-            // set the owning side to null (unless already changed)
-            if ($hardSkill->getProfil() === $this) {
-                $hardSkill->setProfil(null);
-            }
+        if ($this->competence->contains($competence)) {
+            $this->competence->removeElement($competence);
         }
 
         return $this;
