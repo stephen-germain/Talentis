@@ -187,3 +187,8 @@ h2{
 .formSearch{
     background-color: #AAA7A5;
 }
+
+.formSearch img{
+    padding-right: 18%;
+    margin-top: 14%;
+}

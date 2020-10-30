@@ -27,6 +27,8 @@ class RegistrationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+            if($img){
+
             $nomImg = md5(uniqid());
             $extensionImg = $img->guessExtension();
             $newNomImg = $nomImg.'.'.$extensionImg;
@@ -45,6 +47,8 @@ class RegistrationController extends AbstractController
             }
 
             $user->setImg($newNomImg);
+
+        }
             
             // encode the plain password
             $user->setPassword(
