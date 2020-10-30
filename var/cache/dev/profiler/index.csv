@@ -34,3 +34,5 @@ c5bd1b,::1,POST,http://localhost:8888/talentis-bis/public/connexion,1603965343,,
 805559,::1,GET,http://localhost:8888/talentis-bis/public/,1603965343,,200
 1f98ab,::1,GET,http://localhost:8888/talentis-bis/public/user/space,1603965349,,200
 f7b64e,::1,GET,http://localhost:8888/talentis-bis/public/user/space,1603965440,,200
+81310e,::1,GET,http://localhost:8888/talentis-bis/public/,1604050959,,200
+a4334d,::1,GET,http://localhost:8888/talentis-bis/public/user/space,1604050965,,200

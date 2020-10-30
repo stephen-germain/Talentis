@@ -86,7 +86,7 @@ class __TwigTemplate_906f4028f2e12e35343e08592626a12dc307127cda90996fd6326eafe36
 
         // line 6
         echo "    <div class=\"container\">
-        <div class=\"row\">
+        <div class=\"row formSearch\">
             <div class=\"col-3\">
                 ";
         // line 9
@@ -98,24 +98,19 @@ class __TwigTemplate_906f4028f2e12e35343e08592626a12dc307127cda90996fd6326eafe36
         echo "
             </div>
             <div class=\"col-6\">
-                <select class=\"form-control form-control-sm\">
-                   ";
+
+                ";
         // line 14
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["competence"]) || array_key_exists("competence", $context) ? $context["competence"] : (function () { throw new RuntimeError('Variable "competence" does not exist.', 14, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["test"]) {
-            // line 15
-            echo "                        <option>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["test"], "competences", [], "any", false, false, false, 15), "html", null, true);
-            echo "</option>
-                    ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['test'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 17
-        echo "                </select> 
-            </div>
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 14, $this->source); })()), 'form_start');
+        echo "
+                ";
+        // line 15
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 15, $this->source); })()), 'form_end');
+        echo "
+
+                ";
+        // line 22
+        echo "            </div>
         </div>
     </div>
 ";
@@ -139,7 +134,7 @@ class __TwigTemplate_906f4028f2e12e35343e08592626a12dc307127cda90996fd6326eafe36
 
     public function getDebugInfo()
     {
-        return array (  117 => 17,  108 => 15,  104 => 14,  97 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  113 => 22,  108 => 15,  104 => 14,  97 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -150,17 +145,21 @@ class __TwigTemplate_906f4028f2e12e35343e08592626a12dc307127cda90996fd6326eafe36
 
 {% block body %}
     <div class=\"container\">
-        <div class=\"row\">
+        <div class=\"row formSearch\">
             <div class=\"col-3\">
                 {{ app.user.img }}
                 {{ app.user.prenom}}
             </div>
             <div class=\"col-6\">
-                <select class=\"form-control form-control-sm\">
+
+                {{ form_start(formulaire) }}
+                {{ form_end(formulaire ) }}
+
+                {# <select class=\"form-control form-control-sm\">
                    {% for test in competence %}
                         <option>{{ test.competences }}</option>
                     {% endfor %}
-                </select> 
+                </select>  #}
             </div>
         </div>
     </div>
