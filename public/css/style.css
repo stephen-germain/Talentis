@@ -152,6 +152,34 @@ h2{
     background-color: #0D3153;
 }
 
+/**********
+** LOGIN **
+***********/
+
+.formLog{
+    background-color: #AAA7A5;
+    border-radius: 25px;
+}
+
+.formLog a{
+    color: rgba(0,0,0,.5);
+}
+
+.formLog a:hover{
+    text-decoration: none;
+}
+
+.formLog button{
+    background: #0D3153;
+    color: #fff;
+    transition: 0.6s;
+}
+
+.formLog button:hover{
+    background: #195791;
+    color: #fff;
+}
+
 /***************
 ** MON ESPACE **
 ***************/
