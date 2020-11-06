@@ -12,7 +12,7 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index(\Swift_Mailer $mailer, Request $request)
+    public function index(Request $request)
     {
         $formulaireContact = $this->createForm(ContactType::class);
         $formulaireContact->handleRequest($request);
