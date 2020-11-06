@@ -59,6 +59,11 @@ class Profil
      */
     public $capacites;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img;
+
     public function __construct()
     {
         $this->competences = new ArrayCollection();
@@ -197,5 +202,17 @@ class Profil
 
     public function __toString() {
         return $this->getName();
+    }
+
+    public function getImg(): ?string
+    {
+        return $this->img;
+    }
+
+    public function setImg(?string $img): self
+    {
+        $this->img = $img;
+
+        return $this;
     }
 }

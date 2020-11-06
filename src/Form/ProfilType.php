@@ -23,7 +23,8 @@ class ProfilType extends AbstractType
             // ))
 
             ->add('titre', ChoiceType::class, [
-               
+                'required' => false,
+                'placeholder' => 'Choose an option',
                 'choices' => [
                     'Chef de projet' => 'Chef de projet',
                     'Chef de projet AMOA' => 'Chef de projet AMOA',
@@ -38,7 +39,8 @@ class ProfilType extends AbstractType
             // ))
 
             ->add('metier', ChoiceType::class, [
-               
+                'required' => false,
+                'placeholder' => 'Choose an option',
                 'choices' => [
                     'Banque' => 'Banque',
                     'Informatique' => 'Informatique',

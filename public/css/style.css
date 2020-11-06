@@ -193,3 +193,14 @@ h2{
     padding-right: 18%;
     margin-top: 14%;
 }
+
+
+.candidat{
+    background-color: rgba(81, 80, 82, 0.9);
+    border-radius: 25px;
+	width:900px;
+}
+
+.well{
+    padding:25px;
+}
