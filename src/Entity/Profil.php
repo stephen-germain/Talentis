@@ -37,12 +37,12 @@ class Profil
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $titre;
+    public $titre;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $metier;
+    public $metier;
 
     /**
      * @ORM\Column(type="integer")
@@ -52,12 +52,12 @@ class Profil
     /**
      * @ORM\ManyToMany(targetEntity=HardSkills::class, inversedBy="profils")
      */
-    private $competences;
+    public $competences;
 
     /**
      * @ORM\ManyToMany(targetEntity=SoftSkills::class, inversedBy="profils")
      */
-    private $capacites;
+    public $capacites;
 
     public function __construct()
     {
@@ -193,5 +193,9 @@ class Profil
         }
 
         return $this;
+    }
+
+    public function __toString() {
+        return $this->getName();
     }
 }

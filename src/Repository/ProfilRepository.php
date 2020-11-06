@@ -47,4 +47,21 @@ class ProfilRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function searchProfil($profilData): array
+    {
+        return $this->createQueryBuilder('p')
+            ->join('p.competences', 'h')
+            ->join('p.capacites', 's')
+            ->andWhere('p.titre = :titre')
+            ->setParameter('titre', $profilData->titre)
+            ->andWhere('p.metier = :metier')
+            ->setParameter('metier', $profilData->metier)
+            ->orWhere('h.id = :id')
+            ->setParameter('id', $profilData->competences)
+            ->orWhere('s.id = :id')
+            ->setParameter('id', $profilData->capacites)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Profil;
 use App\Form\ProfilType;
 use App\Repository\ProfilRepository;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,15 +16,25 @@ class UserSpaceController extends AbstractController
      */
     public function index(ProfilRepository $profilRepository, Request $request)
     {
-        $profil = $profilRepository->findAll();
-        
+
+        $profil =[];
         $form = $this->createForm(ProfilType::class);
         $form->handleRequest($request);
+        
+        if ($form->isSubmitted() && $form->isValid()){
+            $profilData = $form->getData();
+            // dd($profilData);
+           
+            $profil = $profilRepository->searchProfil($profilData);
 
+            // dd($profil);
+            // $test = $profilRepository->searchProfil($profilData);
+
+        }
 
         return $this->render('user_space/user_space.html.twig', [
-            'profil' => $profil,
-            'formulaire' => $form->createView()
+            'formulaire' => $form->createView(),
+             'profils' => $profil,
         ]);
     }
 }
