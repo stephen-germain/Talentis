@@ -15,6 +15,7 @@ h2{
 .colorBack{
     background: #c7d0d8;
 }
+
 /*************
 ** 1 NAVBAR **
 *************/
@@ -189,11 +190,18 @@ h2{
     border-radius: 25px;
 }
 
-.formSearch img{
-    padding-right: 18%;
-    margin-top: 14%;
+.formSearch a:hover{
+    text-decoration: none;
 }
 
+.formSearch img{
+    padding-right: 46%;
+    margin-top: 9%;
+}
+
+.titleSkill{
+    margin-bottom: 0px;
+}
 
 .candidat{
     background-color: rgba(81, 80, 82, 0.9);
@@ -203,4 +211,15 @@ h2{
 
 .well{
     padding:25px;
+}
+
+.formSearch button{
+    background: #0D3153;
+    color: #fff;
+    transition: 0.6s;
+}
+
+.formSearch button:hover{
+    background: #195791;
+    color: #fff;
 }

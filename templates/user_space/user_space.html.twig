@@ -5,56 +5,52 @@
 {% block body %}
     <div class="container py-4">
         <div class="row formSearch">
-            <div class="col-2">    
+            <div class="col-3">    
                 {% if app.user.img %}
                     <img src="{{ asset('img/' ~app.user.img) }}" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="img profil"> 
                 {% else %}
                     <img src="{{ asset('img/avatar-159236_1280.png') }}" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="img profil"> 
                 {% endif %}
-                <p>Bonjour {{ app.user.prenom}}, </p>
+                <p class="text-dark">Bonjour {{ app.user.prenom}}, </p>
                 <ul>
-                    <li><a href="#">Mes factures</a></li>
-                    <li><a href="#">Mon abonnement</a></li>
+                    <li><a href="#" class="text-dark">Mes factures</a></li>
+                    <li><a href="#" class="text-dark">Mon abonnement</a></li>
                 </ul>
             </div>
-            <div class="col-4 offset-3">
-                <div class="row">
+            <div class="col-4 offset-2">
+                <div class="row pt-3">
                     <h4>Espace Recruteur</h4>
                 </div>
                 {{ form_start(formulaire) }}
                 <div class="row">
-                    {{ form_widget(formulaire.titre) }}
-                    {{ form_widget(formulaire.metier) }}
-                   {# {{ form_widget(formulaire.experience) }} #}
+                    {{ form_widget(formulaire.titre, {'attr': { 'class': 'titre' }}) }}
+                    {{ form_widget(formulaire.metier, {'attr': { 'class': 'metier' }}) }}
                 </div>
-                <div class="row">
+                <div class="row pt-3">
                     <div class="col">
-                        <div class="row">
-                            <div class="col text-center">
-                                <p>Soft skills :</p>
-                            </div>
+                        <div class="col text-center">
+                            <p class="titleSkill">Soft skills :</p>
                         </div>
                         <div class="row">
                             <div class="col">
-                                {{ form_widget(formulaire.capacites) }}
-                                {# {{ form_widget(formulaire.softSkills2) }}
-                                {{ form_widget(formulaire.softSkills3) }} #}
+                                {{ form_widget(formulaire.capacites, {'attr': { 'class': 'soft' }}) }}
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="row">
-                            <div class="col text-center">
-                                <p>Hard skills :</p>
-                            </div>
+                        <div class="col text-center">
+                            <p class="titleSkill">Hard skills :</p>
                         </div>
                         <div class="row">
                             <div class="col">
-                                {{ form_widget(formulaire.competences) }}
-                                {# {{ form_widget(formulaire.hardSkills2) }}
-                                {{ form_widget(formulaire.hardSkills3) }} #}
+                                {{ form_widget(formulaire.competences, {'attr': { 'class': 'soft' }}) }}
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="row pt-3">
+                    <div class="col text-center">
+                        <button type="submit" class="btn">Rechercher</button>
                     </div>
                 </div>
                 {{ form_end(formulaire ) }}
@@ -82,7 +78,7 @@
                                                             <h4>{{ profil.prenom }} {{ profil.nom }}</h4>
                                                             <h5>{{ profil.titre }}</h5>
                                                             <i class="glyphicon glyphicon-gift"></i>{{ profil.age }} ans
-                                                            <small><cite title="San Francisco, USA">Evry (91) <i class="glyphicon glyphicon-map-marker"></i></cite></small>
+                                                            <small><cite title="San Francisco, USA">{{ profil.metier }} <i class="glyphicon glyphicon-map-marker"></i></cite></small>
                                                             <p>
                                                                 <i class="glyphicon glyphicon-envelope">email@example.com</i>
                                                                 <br />

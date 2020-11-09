@@ -17,58 +17,37 @@ class ProfilType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            // ->add('titre', EntityType::class, array(
-            //     'class'=>Profil::class,
-            //     'choice_label' => 'titre'
-            // ))
-
             ->add('titre', ChoiceType::class, [
                 'required' => false,
-                'placeholder' => 'Choose an option',
                 'choices' => [
                     'Chef de projet' => 'Chef de projet',
                     'Chef de projet AMOA' => 'Chef de projet AMOA',
                     'Chef de projet Marketing' => 'Chef de projet Marketing',
-                    'titre' => 'Chef de projet',
                 ],
-                
             ])
-            // ->add('metier', EntityType::class, array(
-            //     'class' => Profil::class,
-            //     'choice_label' => 'metier'
-            // ))
-
             ->add('metier', ChoiceType::class, [
                 'required' => false,
-                'placeholder' => 'Choose an option',
                 'choices' => [
+                    'NULL'=>'',
                     'Banque' => 'Banque',
                     'Informatique' => 'Informatique',
                     'Aéronautique' => 'Aéronautique',
                     'Finances' => 'Finances',
-                ],
-                
+                ], 
             ])
-
-            // ->add('experience', EntityType::class, array(
-            //     'class' => Profil::class,
-            //     'choice_label' => 'experience'
-            // ))
             ->add('competences', EntityType::class, array(
+                'required' => false,
                 'class' => HardSkills::class, 
                 'choice_label' => 'competences',
-                'expanded'     => true,
                 'multiple'     => true,
-             
             ))
             ->add('capacites', EntityType::class, array(
+                'required' => false,
                 'class'=> SoftSkills::class,
                  'choice_label' => 'capacite',
-                 'expanded'     => true,
                  'multiple'     => true,
             ))
-
-            ->add('rechercher', SubmitType::class)
+            // ->add('rechercher', SubmitType::class)
         ;
     }
 

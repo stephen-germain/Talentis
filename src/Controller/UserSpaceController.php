@@ -23,12 +23,8 @@ class UserSpaceController extends AbstractController
         
         if ($form->isSubmitted() && $form->isValid()){
             $profilData = $form->getData();
-            // dd($profilData);
            
             $profil = $profilRepository->searchProfil($profilData);
-
-            // dd($profil);
-            // $test = $profilRepository->searchProfil($profilData);
 
         }
 
