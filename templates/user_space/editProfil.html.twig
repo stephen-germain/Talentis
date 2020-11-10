@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification du Profil{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Modification du profil</h2>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-4">
+                {{form_start(formulaire)}}
+                {{form_end(formulaire)}}
+            </div>
+        </div>
+    
+    </div>
+    
+
+{% endblock %}

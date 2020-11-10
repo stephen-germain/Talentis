@@ -29,26 +29,26 @@ class RegistrationController extends AbstractController
 
             if($img){
 
-            $nomImg = md5(uniqid());
-            $extensionImg = $img->guessExtension();
-            $newNomImg = $nomImg.'.'.$extensionImg;
+                $nomImg = md5(uniqid());
+                $extensionImg = $img->guessExtension();
+                $newNomImg = $nomImg.'.'.$extensionImg;
 
-            try{
-                $img->move(
-                    $this->getParameter('img_projet'),
-                    $newNomImg
-                );
+                try{
+                    $img->move(
+                        $this->getParameter('img_projet'),
+                        $newNomImg
+                    );
+                }
+                catch(FileException $e){
+                    $this-addFlash(
+                        'danger',
+                        'Une erreur est survenue lors de l\'importation de l\'image'
+                    );  
+                }
+
+                $user->setImg($newNomImg);
+
             }
-            catch(FileException $e){
-                $this-addFlash(
-                    'danger',
-                    'Une erreur est survenue lors de l\'importation de l\'image'
-                );  
-            }
-
-            $user->setImg($newNomImg);
-
-        }
             
             // encode the plain password
             $user->setPassword(
