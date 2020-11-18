@@ -17,20 +17,20 @@
         {% endif %}
 
         <h1 class="h3 mb-3 font-weight-normal text-center pb-4">Please sign in</h1>
-        <div class="row">
-            <div class="col-2 offset-3 text-right">
+        <div class="row justify-content-center">
+            <div class="col-10 col-md-2">
             <label for="inputEmail">Adresse mail</label>
         </div>
-        <div class="col-3">
+        <div class="col-10 col-md-3">
             <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
         </div>
         </div>
         
-        <div class="row">
-            <div class="col-2 offset-3 text-right">
+        <div class="row justify-content-center">
+            <div class="col-10 col-md-2">
                  <label for="inputPassword">Mot de passe</label>
             </div>  
-            <div class="col-3">
+            <div class="col-10 col-md-3">
                 <input type="password" name="password" id="inputPassword" class="form-control" required>
             </div>     
         </div>
@@ -46,10 +46,10 @@
             </div> 
         </div>
         <div class="row">
-            <div class="col-6 offset-5">
+            <div class="col-md-6 offset-5">
                 <a href="#">Mot de passe oublié ?</a>
             </div>
-            <div class="col-6 offset-5 pb-5">
+            <div class="col-md-6 offset-md-5 pb-5">
                 <a href="{{ path('app_register') }}">Pas encore inscrit ? Créer un compte</a>
             </div>
         </div>

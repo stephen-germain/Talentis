@@ -223,3 +223,31 @@ h2{
     background: #195791;
     color: #fff;
 }
+
+/************************
+** MODIFICATION PROFIL **
+************************/
+
+.edit{
+    background:#AAA7A5;
+    border-radius: 25px;
+}
+
+.edit button{
+    background: #0D3153;
+    color: #fff;
+    transition: 0.6s;
+}
+
+.edit button:hover{
+    background: #195791;
+    color: #fff;
+}
+
+.edit a{
+    color: rgba(0,0,0,.5);
+}
+
+.edit a:hover{
+    text-decoration: none;
+}

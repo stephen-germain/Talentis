@@ -26,13 +26,11 @@ class RegistrationController extends AbstractController
         $img = $form['img']->getData();
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             if($img){
-
                 $nomImg = md5(uniqid());
                 $extensionImg = $img->guessExtension();
                 $newNomImg = $nomImg.'.'.$extensionImg;
-
+                
                 try{
                     $img->move(
                         $this->getParameter('img_projet'),
@@ -45,9 +43,7 @@ class RegistrationController extends AbstractController
                         'Une erreur est survenue lors de l\'importation de l\'image'
                     );  
                 }
-
                 $user->setImg($newNomImg);
-
             }
             
             // encode the plain password
@@ -69,6 +65,7 @@ class RegistrationController extends AbstractController
                 $authenticator,
                 'main' // firewall name in security.yaml
             );
+            return $this->redirectToRoute('user_space');
         }
 
         return $this->render('registration/register.html.twig', [

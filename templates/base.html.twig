@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <script src="{{ asset('js/app.js') }}"></script>
         {% block stylesheets %}{% endblock %}
+         <script src="https://js.stripe.com/v3/"></script>
         
     </head>
 
@@ -62,6 +63,11 @@
         <div class="menu">
             <div class="container">
                 <nav id="navbar-example2" class="nav nav-pills flex-column flex-sm-row">
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
                     <a class="flex-sm-fill text-sm-center nav-link active" href="#home">Accueil</a>
                     <a class="flex-sm-fill text-sm-center nav-link" href="#metier">Nos métiers SI</a>
                     <a class="flex-sm-fill text-sm-center nav-link" href="#partenaire">Nos partenaires</a>

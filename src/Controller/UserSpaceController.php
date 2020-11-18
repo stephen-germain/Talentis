@@ -36,7 +36,7 @@ class UserSpaceController extends AbstractController
     }
 
     /**
-     * @Route("/profil/update", name="profil_update")
+     * @Route("/user/profil/update", name="profil_update")
      */
     public function profilUpdate(Request $request){
 
@@ -95,7 +95,7 @@ class UserSpaceController extends AbstractController
     }
 
     /**
-     * @Route("/profil/delete", name="profil_delete")
+     * @Route("/user/profil/delete", name="profil_delete")
      */
     public function profilDelete(){
         $user = $this->getUser();
